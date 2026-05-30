@@ -1,0 +1,48 @@
+name: Immich Machine Learning
+description: Runs the Immich machine learning server as a standalone Home Assistant add-on. Offloads smart search and facial recognition from your NAS to your ha dedicated machine.
+version: "1.1.0"
+slug: immich_ml
+url: https://github.com/Web3Dave/ha-immich-machine-learning
+init: false
+
+arch:
+  - amd64
+  - aarch64
+
+ports:
+  3003/tcp: 3003
+
+ports_description:
+  3003/tcp: Immich ML server HTTP port
+
+options:
+  machine_learning_host: "0.0.0.0"
+  machine_learning_port: 3003
+  machine_learning_workers: 1
+  machine_learning_worker_timeout: 120
+  openvino_device_ids: "0"
+
+schema:
+  machine_learning_host: str
+  machine_learning_port: int
+  machine_learning_workers: int
+  machine_learning_worker_timeout: int
+  openvino_device_ids: str
+
+# OpenVINO-enabled image — required for Intel iGPU acceleration (e.g. N100)
+image: ghcr.io/immich-app/immich-machine-learning:release-openvino
+
+map:
+  - share:rw
+
+# Pass Intel iGPU through for OpenVINO and VA-API access
+devices:
+  - /dev/dri
+
+tmpfs:
+  - /cache
+
+homeassistant_api: false
+hassio_api: false
+auth_api: false
+ingress: false
