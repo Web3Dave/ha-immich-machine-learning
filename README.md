@@ -15,15 +15,17 @@ Downloaded models are cached in `/share/immich-ml/cache` so they survive add-on 
 
 ### 1. Add this repository to Home Assistant
 
-1. In Home Assistant, go to **Settings → Add-ons → Add-on Store**.
-2. Click the **⋮** menu (top-right) and choose **Repositories**.
+> **Note:** Add-ons were renamed to **Apps** in Home Assistant 2026.2. The steps are the same either way.
+
+1. In Home Assistant, go to **Settings → Apps** (older versions: **Settings → Add-ons**).
+2. Click **Install app** to open the App Store, then click the **⋮** menu (top-right) and choose **Repositories**.
 3. Paste the repository URL and click **Add**:
    ```
    https://github.com/Web3Dave/ha-immich-machine-learning
    ```
-4. Refresh the page. The **Immich Machine Learning** add-on will appear in the store.
+4. Refresh the page. **Immich Machine Learning** will appear in the store.
 
-### 2. Install and configure the add-on
+### 2. Install and configure
 
 1. Click **Immich Machine Learning → Install**.
 2. Go to the **Configuration** tab and adjust options if needed:

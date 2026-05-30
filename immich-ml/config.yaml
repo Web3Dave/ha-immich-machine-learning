@@ -29,15 +29,13 @@ schema:
   machine_learning_worker_timeout: int
   openvino_device_ids: str
 
-# OpenVINO-enabled image — required for Intel iGPU acceleration (e.g. N100)
 image: ghcr.io/immich-app/immich-machine-learning:release-openvino
 
 map:
   - share:rw
 
-# Pass Intel iGPU through for OpenVINO and VA-API access
 devices:
-  - /dev/dri
+  - /dev/dri:/dev/dri
 
 tmpfs:
   - /cache
