@@ -29,7 +29,8 @@ schema:
   machine_learning_worker_timeout: int
   openvino_device_ids: str
 
-image: ghcr.io/immich-app/immich-machine-learning:release-openvino
+image: ghcr.io/immich-app/immich-machine-learning
+version: release-openvino
 
 map:
   - share:rw
