@@ -1,5 +1,5 @@
 name: Immich Machine Learning
-description: Runs the Immich machine learning server as a standalone Home Assistant add-on. Offloads smart search and facial recognition from your NAS to your ha dedicated machine.
+description: Runs the Immich machine learning server as a standalone Home Assistant add-on. Offloads smart search and facial recognition from your NAS to this machine.
 version: "1.1.0"
 slug: immich_ml
 url: https://github.com/Web3Dave/ha-immich-machine-learning
@@ -34,13 +34,14 @@ image: ghcr.io/immich-app/immich-machine-learning:release-openvino
 map:
   - share:rw
 
+privileged:
+  - SYS_ADMIN
+
+udev: true
+video: true
+
 devices:
-  - /dev/dri:/dev/dri
-
-tmpfs:
-  - /cache
-
-homeassistant_api: false
-hassio_api: false
-auth_api: false
-ingress: false
+  - /dev/dri
+  - /dev/dri/card0
+  - /dev/dri/card1
+  - /dev/dri/renderD128
