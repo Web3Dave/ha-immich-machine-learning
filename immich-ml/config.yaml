@@ -29,7 +29,7 @@ schema:
   machine_learning_worker_timeout: int
   openvino_device_ids: str
 
-image: ghcr.io/immich-app/immich-machine-learning
+image: ghcr.io/open-noodle/gallery-ml
 version: release-openvino
 
 map:
