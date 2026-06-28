@@ -1,6 +1,6 @@
 name: Immich Machine Learning
 description: Runs the Immich machine learning server as a standalone Home Assistant add-on. Offloads smart search and facial recognition from your NAS to this machine.
-version: "1.3.0"
+version: "1.4.0"
 slug: immich_ml
 url: https://github.com/Web3Dave/ha-immich-machine-learning
 init: false
@@ -29,7 +29,7 @@ schema:
   machine_learning_worker_timeout: int
   openvino_device_ids: str
 
-image: ghcr.io/immich-app/immich-machine-learning
+image: ghcr.io/open-noodle/gallery-ml
 version: release-openvino
 
 map:
